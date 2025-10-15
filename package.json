@@ -1,0 +1,29 @@
+{
+  "name": "actionslogshipper",
+  "version": "1.0.0",
+  "description": "A simple tool that receives workflow_run event, downloads the logs and ships to a supported blob provider",
+  "keywords": [
+    "actions",
+    "blob",
+    "logs"
+  ],
+  "homepage": "https://github.com/wechuli/actionslogshipper#readme",
+  "bugs": {
+    "url": "https://github.com/wechuli/actionslogshipper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wechuli/actionslogshipper.git"
+  },
+  "license": "ISC",
+  "author": "wechuli",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "typescript": "^5.9.3"
+  }
+}
