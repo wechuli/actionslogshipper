@@ -15,15 +15,51 @@
     "type": "git",
     "url": "git+https://github.com/wechuli/actionslogshipper.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "wechuli",
-  "type": "module",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "jest": {
+    "preset": "ts-jest",
+    "verbose": true,
+    "clearMocks": true,
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/**"
+    ]
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start:dev": "tsx src/index.ts --watch",
+    "start:prod": "node ./dist/index.js",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.7.2",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
     "typescript": "^5.9.3"
   },
   "dependencies": {
