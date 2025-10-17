@@ -4,6 +4,7 @@ import { pino } from "pino";
 import cors from "cors";
 import requestLogger from "./common/middleware/requestLogger";
 import errorHandler from "./common/middleware/errorHandler";
+import healthRouter from "./routes/health";
 
 const logger = pino({ name: "server start" });
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(requestLogger);
 
 // Routes
+app.use("/api", healthRouter);
 
 // Error handling middleware
 app.use(errorHandler());
